@@ -1,23 +1,76 @@
-# Lab 1 – Client-Server Interaction
+# Лабораторная работа 1 – Клиент-серверное взаимодействие
 
-## Description
-Simple FastAPI server that returns number of days before New Year.
+## Описание
 
-## Run locally
+Данное веб-приложение реализовано с использованием FastAPI и демонстрирует основы клиент-серверного взаимодействия.
+Сервер обрабатывает HTTP GET-запрос и возвращает количество дней до наступления Нового года.
+
+---
+
+## Запуск приложения локально
+
+```bash
 python -m uvicorn main:app --reload
+```
 
-## Run with Docker
+После запуска приложение будет доступно по адресу:
+http://localhost:8000
+
+Swagger-документация:
+http://localhost:8000/docs
+
+---
+
+## Запуск через Docker
+
+Сборка образа:
+
+```bash
 docker build -t lab1 .
+```
+
+Запуск контейнера:
+
+```bash
 docker run -p 8000:8000 lab1
+```
 
-## Run with Docker Compose
+---
+
+## Запуск через Docker Compose
+
+```bash
 docker compose up --build
+```
 
-## Endpoint
+---
 
-GET /info
+## API
 
-Example response:
+### GET /info
+
+Возвращает количество дней до наступления Нового года.
+
+### Пример ответа:
+
+```json
 {
   "days_before_new_year": 123
 }
+```
+
+---
+
+## Используемые технологии
+
+* Python
+* FastAPI
+* Uvicorn
+* Docker
+* Docker Compose
+
+---
+
+## Автор
+
+Путинцев С.Р 090304-РПИб-о23
